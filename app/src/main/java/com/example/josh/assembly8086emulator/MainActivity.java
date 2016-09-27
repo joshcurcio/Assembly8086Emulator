@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         String instruction = input.substring(0, input.indexOf(" "));
         String destination = input.substring(input.indexOf(" ") + 1, input.indexOf(","));
         String value = input.substring(input.indexOf(",") + 2);
-        String binaryString;
+        String binaryString = "";
 
         if(value.equalsIgnoreCase("ax"))
         {
