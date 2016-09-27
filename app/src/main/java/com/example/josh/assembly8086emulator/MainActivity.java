@@ -67,9 +67,27 @@ public class MainActivity extends AppCompatActivity {
         String instruction = input.substring(0, input.indexOf(" "));
         String destination = input.substring(input.indexOf(" ") + 1, input.indexOf(","));
         String value = input.substring(input.indexOf(",") + 2);
-        String binaryString = Integer.toBinaryString(Integer.parseInt(value));
-        if(isNumeric(value))
+        String binaryString;
+
+        if(value.equalsIgnoreCase("ax"))
         {
+            binaryString = this.outputAX.getText().toString();
+        }
+        else if(value.equalsIgnoreCase("bx"))
+        {
+            binaryString = this.outputBX.getText().toString();
+        }
+        else if(value.equalsIgnoreCase("cx"))
+        {
+            binaryString = this.outputCX.getText().toString();
+        }
+        else if(value.equalsIgnoreCase("dx"))
+        {
+            binaryString = this.outputDX.getText().toString();
+        }
+        else if(isNumeric(value))
+        {
+            binaryString = Integer.toBinaryString(Integer.parseInt(value));
             if (binaryString.length() < 16)
             {
                 while (binaryString.length() < 16)
